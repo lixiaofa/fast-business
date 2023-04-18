@@ -1,4 +1,10 @@
-import ElSku from './sku'
+/*
+ * @Description:
+ * @Author: 司马老贼
+ * @Date: 2023-02-22 19:03:03
+ * @LastEditTime: 2023-04-12 15:15:27
+ * @LastEditors: 司马老贼
+ */
 
 export * from './affix'
 export * from './alert'
@@ -56,7 +62,7 @@ export * from './space'
 export * from './statistic'
 export * from './steps'
 export * from './switch'
-export * from './sku'
+
 export * from './table'
 export * from './table-v2'
 export * from './tabs'
@@ -71,6 +77,8 @@ export * from './tree-select'
 export * from './tree-v2'
 export * from './upload'
 export * from './virtual-list'
+
+export * from './sku'
 
 // plugins
 export * from './infinite-scroll'

@@ -3,6 +3,7 @@ import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import Components from 'unplugin-vue-components/vite'
+
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Inspect from 'vite-plugin-inspect'
 import mkcert from 'vite-plugin-mkcert'
@@ -61,6 +62,7 @@ export default defineConfig(async ({ mode }) => {
       VueMacros({
         setupComponent: false,
         setupSFC: false,
+
         plugins: {
           vue: vue(),
           vueJsx: vueJsx(),

@@ -1,0 +1,131 @@
+@use 'sass:map';
+
+@use 'mixins/mixins' as *;
+@use 'mixins/utils' as *;
+@use 'common/var' as *;
+
+@include b(sku) {
+  @include e(wrapper) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    min-height: 50%;
+    max-height: 80%;
+    overflow-y: visible;
+    font-size: 14px;
+    background: #fff;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+  }
+  @include e(symbol) {
+    font-size: 16px;
+    vertical-align: bottom;
+  }
+  @include e(num) {
+    font-weight: 500;
+    font-size: 22px;
+    vertical-align: bottom;
+    word-wrap: break-word;
+  }
+  @include e(img) {
+    margin: 4px 0 4px 4px;
+    border-radius: 2px;
+  }
+  @include e(name) {
+    padding: 8px;
+  }
+  @include m(active) {
+    background-color: #fde7ea !important;
+
+    color: #ee0a24 !important;
+  }
+  @include m(disabled) {
+    color: #c8c9cc;
+    background: #f2f3f5;
+    cursor: not-allowed;
+  }
+}
+
+@include b(sku-header) {
+  display: flex;
+
+  @include e(wrapper) {
+    display: grid;
+    align-content: end;
+    margin-left: 15px;
+  }
+  @include e(price) {
+    margin-left: -2px;
+    color: #ee0a24;
+  }
+}
+
+@include b(sku-body) {
+  @include e(wrapper) {
+    margin-top: 12px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 44px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@include b(sku-header-item) {
+  margin-top: 8px;
+  color: #969799;
+  font-size: 12px;
+  line-height: 16px;
+}
+@include b(sku-row) {
+  margin-bottom: 12px;
+  @include e(label) {
+    padding-bottom: 12px;
+  }
+  @include m(multiple) {
+    color: #969799;
+  }
+}
+
+@include b(sku-row-item) {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-width: 40px;
+  margin: 0 12px 12px 0;
+  font-size: 13px;
+  line-height: 16px;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+  color: #323233;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #f7f8fa;
+}
+
+@include b(sku-stepper) {
+  display: flex;
+  justify-content: space-between;
+  @include m(quota) {
+    color: #ee0a24;
+    font-size: 12px;
+    margin-right: 8px;
+  }
+}
