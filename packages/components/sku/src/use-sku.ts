@@ -2,7 +2,7 @@
  * @Description:
  * @Author: 司马老贼
  * @Date: 2023-03-02 11:34:52
- * @LastEditTime: 2023-04-18 10:17:01
+ * @LastEditTime: 2023-04-18 10:50:29
  * @LastEditors: 司马老贼
  */
 import { computed, ref, watch } from 'vue'
@@ -95,18 +95,16 @@ export const useSku = (
   </span>件`
   })
 
-  const reSelectedText = () => {
-    const unselectedSku = props.sku.tree.map((item) => {
-      const hasSelected = item.v.some((vItem) => vItem.active === TRUE)
-      if (!hasSelected) return item.k
-      return undefined
-    })
+  const getUnselectedKeys = (items: (SkuItem | PropertiesItem)[]) => {
+    return items
+      .filter((item) => !item.v.some((vItem) => vItem.active === TRUE))
+      .map((item) => item.k)
+  }
 
-    const unSelectedProperties = props.properties.map((item) => {
-      const hasSelected = item.v.some((vItem) => vItem.active === TRUE)
-      if (!hasSelected) return item.k
-      return undefined
-    })
+  const reSelectedText = () => {
+    const unselectedSku = getUnselectedKeys(props.sku.tree)
+
+    const unSelectedProperties = getUnselectedKeys(props.properties)
 
     return `请选择 ${unselectedSku.concat(unSelectedProperties).join(' ')}`
   }
